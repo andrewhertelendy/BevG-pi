@@ -7,7 +7,7 @@ from sklearn.metrics import r2_score, mean_squared_error
 from xgboost import XGBRegressor
 
 # Load the dataset
-data = pd.read_excel('datos_merged_1986_2023.xlsx')
+data = pd.read_excel('https://github.com/andrewhertelendy/BevGepi/blob/main/BevGepiTan/datos_merged_1986_2023.xlsx')
 
 # Data preprocessing
 columns_to_keep = ['popularity', 'danceability', 'year', 'valence', 'speechiness', 'loudness', 'energy', 'principal_artist_followers', 'album_total_tracks', 'acousticness']
