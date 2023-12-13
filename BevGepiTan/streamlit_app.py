@@ -6,7 +6,7 @@ from sklearn.preprocessing import PolynomialFeatures
 from sklearn.metrics import r2_score, mean_squared_error
 from xgboost import XGBRegressor
 
-data = pd.read_csv('https://github.com/andrewhertelendy/BevGepi/blob/main/BevGepiTan/datos_merged_1986_2023.csv')
+data = pd.read_csv('BevGepiTan/datos_merged_1986_2023.csv')
 
 # Data preprocessing
 columns_to_keep = ['popularity', 'danceability', 'year', 'valence', 'speechiness', 'loudness', 'energy', 'principal_artist_followers', 'album_total_tracks', 'acousticness']
