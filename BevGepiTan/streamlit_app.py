@@ -5,9 +5,16 @@ from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.metrics import r2_score, mean_squared_error
 from xgboost import XGBRegressor
+import requests
+from io import BytesIO
 
-# Load the dataset
-data = pd.read_excel('https://github.com/andrewhertelendy/BevGepi/blob/main/BevGepiTan/datos_merged_1986_2023.xlsx')
+# Download the Excel file from the GitHub URL
+url = 'https://github.com/andrewhertelendy/BevGepi/raw/main/BevGepiTan/datos_merged_1986_2023.xlsx'
+response = requests.get(url)
+excel_data = response.content
+
+# Read the Excel file from the content using Pandas
+data = pd.read_excel(BytesIO(excel_data))
 
 # Data preprocessing
 columns_to_keep = ['popularity', 'danceability', 'year', 'valence', 'speechiness', 'loudness', 'energy', 'principal_artist_followers', 'album_total_tracks', 'acousticness']
